@@ -1,5 +1,5 @@
-# restli
-A REST client CLI tool.
+# Restli
+A REST client CLI tool. Built it with Cobra and Resty
 
  ### GET
  ``
