@@ -41,5 +41,5 @@ func init() {
 	rootCmd.AddCommand(PUTCmd)
 
 	PUTCmd.Flags().StringVarP(&urlPut, "url", "u", "", "URL of API you want to request")
-	PUTCmd.Flags().StringVarP(&bodyPut, "body", "b", "", "The body you want to post")
+	PUTCmd.Flags().StringVarP(&bodyPut, "body", "b", "", "The body you want to put")
 }
