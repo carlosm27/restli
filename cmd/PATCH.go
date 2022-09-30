@@ -39,5 +39,8 @@ func init() {
 	rootCmd.AddCommand(PATCHCmd)
 
 	PATCHCmd.Flags().StringVarP(&urlPatch, "url", "u", "", "URL of API you want to request")
+
 	PATCHCmd.Flags().StringVarP(&bodyPatch, "body", "b", "", "The body you want to patch")
+
+
 }
