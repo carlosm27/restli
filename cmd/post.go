@@ -35,9 +35,9 @@ var urlPost string
 var bodyPost string
 
 func init() {
-	rootCmd.AddCommand(postCmd)
+	rootCmd.AddCommand(POSTCmd)
 
-	postCmd.Flags().StringVarP(&urlPost, "url", "u", "", "URL of API you want to request")
-	postCmd.Flags().StringVarP(&bodyPost, "body", "b", "", "The body you want to post")
+	POSTCmd.Flags().StringVarP(&urlPost, "url", "u", "", "URL of API you want to request")
+	POSTCmd.Flags().StringVarP(&bodyPost, "body", "b", "", "The body you want to post")
 
 }
