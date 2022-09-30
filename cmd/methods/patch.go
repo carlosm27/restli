@@ -23,6 +23,8 @@ func Patch(url string, body string) {
 	fmt.Println(body)
 
 	fmt.Println("Response Body:\n", resp)
-	fmt.Println(" Status Code: ", resp.StatusCode())
+
+	fmt.Println("Status Code: ", resp.StatusCode())
+
 
 }
