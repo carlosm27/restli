@@ -27,6 +27,8 @@ to quickly create a Cobra application.`,
 	},
 }
 
+var url string
+
 func init() {
 	rootCmd.AddCommand(GETCmd)
 
