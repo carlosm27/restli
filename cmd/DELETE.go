@@ -7,6 +7,7 @@ package cmd
 import (
 	"fmt"
 
+	"github.com/carlosm27/restli/cmd/methods"
 	"github.com/spf13/cobra"
 )
 
