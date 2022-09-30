@@ -6,7 +6,10 @@ package cmd
 
 import (
 	"fmt"
+	"os"
+	"encoding/json"
 
+	"github.com/carlosm27/restli/cmd/methods"
 	"github.com/spf13/cobra"
 )
 
