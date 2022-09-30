@@ -5,7 +5,7 @@ package cmd
 
 import (
 	"encoding/json"
-	"fmt"
+
 	"os"
 
 	"github.com/carlosm27/restli/cmd/methods"
@@ -23,21 +23,21 @@ This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 
-		json.NewEncoder(os.Stdout).Encode(body)
-		fmt.Printf("The body is: ", body)
-		methods.Post(urlPost, body)
+		json.NewEncoder(os.Stdout).Encode(bodyPost)
+
+		methods.Post(urlPost, bodyPost)
 
 	},
 }
 
 var urlPost string
 
-var body string
+var bodyPost string
 
 func init() {
 	rootCmd.AddCommand(postCmd)
 
 	postCmd.Flags().StringVarP(&urlPost, "url", "u", "", "URL of API you want to request")
-	postCmd.Flags().StringVarP(&body, "body", "b", "", "The body you want to post")
+	postCmd.Flags().StringVarP(&bodyPost, "body", "b", "", "The body you want to post")
 
 }
