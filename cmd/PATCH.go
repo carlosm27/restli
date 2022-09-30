@@ -25,7 +25,7 @@ to quickly create a Cobra application.`,
 
 		json.NewEncoder(os.Stdout).Encode(urlPatch)
 
-		methods.Post(urlPatch, bodyPatch)
+		methods.Patch(urlPatch, bodyPatch)
 	},
 }
 

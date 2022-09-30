@@ -7,7 +7,7 @@ import (
 	"github.com/go-resty/resty/v2"
 )
 
-func Put(url string, body string) {
+func Patch(url string, body string) {
 
 	client := resty.New()
 
