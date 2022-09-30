@@ -1,19 +1,18 @@
 /*
 Copyright © 2022 NAME HERE <EMAIL ADDRESS>
+
 */
 package cmd
 
 import (
-	"encoding/json"
+	"fmt"
 
-	"os"
-
-	"github.com/carlosm27/restli/cmd/methods"
 	"github.com/spf13/cobra"
 )
 
-var postCmd = &cobra.Command{
-	Use:   "post",
+// PATCHCmd represents the PATCH command
+var PATCHCmd = &cobra.Command{
+	Use:   "PATCH",
 	Short: "A brief description of your command",
 	Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. For example:
@@ -22,22 +21,23 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
+		fmt.Println("PATCH called")
 
-		json.NewEncoder(os.Stdout).Encode(bodyPost)
+		json.NewEncoder(os.Stdout).Encode(urlPatch)
 
-		methods.Post(urlPost, bodyPost)
-
+		methods.Patch(urlPatch, bodyPatch)
 	},
 }
 
-var urlPost string
 
-var bodyPost string
+var (
+	urlPatch  string
+	bodyPatch string
+)
 
 func init() {
-	rootCmd.AddCommand(postCmd)
+	rootCmd.AddCommand(PATCHCmd)
 
-	postCmd.Flags().StringVarP(&urlPost, "url", "u", "", "URL of API you want to request")
-	postCmd.Flags().StringVarP(&bodyPost, "body", "b", "", "The body you want to post")
-
+	PATCHCmd.Flags().StringVarP(&urlPatch, "url", "u", "", "URL of API you want to request")
+	PATCHCmd.Flags().StringVarP(&bodyPatch, "body", "b", "", "The body you want to post")
 }

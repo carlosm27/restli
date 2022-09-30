@@ -7,14 +7,14 @@ import (
 	"github.com/go-resty/resty/v2"
 )
 
-func Post(url string, body string) {
+func Patch(url string, body string) {
 
 	client := resty.New()
 
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetBody(body).
-		Post(url)
+		Patch(url)
 
 	if err != nil {
 		log.Println(err)
