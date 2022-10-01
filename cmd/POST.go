@@ -26,22 +26,18 @@ to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("POST called")
 
-		json.NewEncoder(os.Stdout).Encode(urlPost)
+		json.NewEncoder(os.Stdout).Encode(url)
 
-		methods.Post(urlPost, bodyPost)
+		methods.Post(url, body)
 	},
 }
 
-var (
-	urlPost  string
-	bodyPost string
-)
+
 
 func init() {
 	rootCmd.AddCommand(POSTCmd)
 
-	POSTCmd.Flags().StringVarP(&urlPost, "url", "u", "", "URL of API you want to request")
-	POSTCmd.Flags().StringVarP(&bodyPost, "body", "b", "", "The body you want to post")
-
+	POSTCmd.Flags().StringVarP(&url, "url", "u", "", "URL of API you want to request")
+	POSTCmd.Flags().StringVarP(&body, "body", "b", "", "The body you want to post, put or patch")
 	
 }

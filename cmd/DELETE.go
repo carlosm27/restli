@@ -24,7 +24,7 @@ to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("DELETE called")
 
-		methods.Delete(urlDelete)
+		methods.Delete(url)
 	},
 }
 
@@ -33,6 +33,6 @@ var urlDelete string
 func init() {
 	rootCmd.AddCommand(DELETECmd)
 
-	PATCHCmd.Flags().StringVarP(&urlDelete, "url", "u", "", "URL of API you want to request")
+	DELETECmd.Flags().StringVarP(&url, "url", "u", "", "URL of API you want to request")
 
 }
